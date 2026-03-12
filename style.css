@@ -1,0 +1,101 @@
+.bodystart {
+  position: relative;
+  width: 100%;
+  height: 86vh;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #000; /* Темный фон на всякий случай */
+}
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  /* Плавный переход без рывков */
+  animation: fadeLoop 30s infinite ease-in-out;
+}
+.slide-bg:nth-child(1) { animation-delay: 0s; }
+.slide-bg:nth-child(2) { animation-delay: 10s; }
+.slide-bg:nth-child(3) { animation-delay: 20s; }
+
+@keyframes fadeLoop {
+  0% { opacity: 0; }
+  10% { opacity: 0.4; } 
+  33.3% { opacity: 0.4; }
+  43.3% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hintergrund-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Идеальное центрирование */
+  z-index: 10; /* Поднимаем текст над картинками */
+  text-align: center;
+  color: white;
+  width: 90%; /* Чтобы текст не прилипал к краям на мобильных */
+  pointer-events: none; 
+}
+
+.hintergrund-text h1{
+  font-size: 100px;
+}
+
+.hintergrund-text p{
+  font-size: 50px;
+}
+.modal-Anm, .modal-Reg {
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 40%;
+
+  height: 60%;
+
+  background-color: rgba(255, 255, 255);
+
+  transform: translate(-50%, -50%);
+  
+}
+
+.modal-content-anm, .modal-content-reg  {
+
+  background-color: #fff;
+
+  margin: 10% auto;
+
+  padding: 20px;
+
+  border: 1px solid #333;
+
+  border-radius: 5px;
+
+  width: 50%;
+
+}
+
+.modal-header-anm, .modal-header-reg {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid #333;
+
+}
+
+#closeModal, #openModalAnm, #openModalReg {
+
+  cursor: pointer;
+
+}
