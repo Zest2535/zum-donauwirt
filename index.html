@@ -9,9 +9,10 @@
     <title>Zum-Donauwirt</title>
 </head>
 <body >
+  <!--Navigation Menü-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" >
-          <a class="navbar-brand" href="index.html"><img src="/img/logo-Ohne-Hintergrund.png" alt="logo" width="200" height="80"></a>
+          <a class="navbar-brand" href="index.html"><img src="img/logo-Ohne-Hintergrund.png" alt="logo" width="200" height="80"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -38,73 +39,51 @@
             <div>
            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 40px;">
             <li class="nav-item">
-            <p class="nav-link" id="openModalAnm" onclick="openModalAnm ()">Anmeldung</p>
+              <p class="nav-link" id="openModalAnm">Anmeldung</p>
             </li>
             <li class="nav-item">
-              <p class="nav-link" id="openModalReg" onclick="openModalReg()">Registrierung</p>
+              <p class="nav-link" id="openModalReg">Registrierung</p>
               </li>
           </ul>
         </div>
-            <div id="modal-Anm" class="modal-Anm">
-
-              <div class="modal-header-Anm">
-          
-                  <h2>Anmeldung</h2>
-          
-              </div>
-          
-              <div class="modal-content-anm">
-                <form action="index.php" method="post">
-                  <div class="form-example">
-                    <label for="name">Enter your name: </label>
-                    <input type="text" name="name" id="name" required />
-                  </div>
-                  <div class="form-example">
-                    <label for="email">Enter your email: </label>
-                    <input type="email" name="email" id="email" required />
-                  </div>
-                  
-                </form>
-              </div>
-          
-              <div class="modal-footer-anm">
-                <button id="Anmelden">Anmelden</button>
-                <button id="closeAllModal">Zurück</button>
-          
-              </div>^
-              <div>
-              
-              <div id="modal-Reg" class="modal-Reg">
-
-                <div class="modal-header-Reg">
-            
-                    <h2>Registrierung</h2>
-            
-                </div>
-            
-                <div class="modal-content-Reg">
-                  <form action="index.php" method="post">
-                    <div class="form-example">
-                      <label for="name">Enter your name: </label>
-                      <input type="text" name="name" id="name" required />
-                    </div>
-                    <div class="form-example">
-                      <label for="email">Enter your email: </label>
-                      <input type="email" name="email" id="email" required />
-                    </div>
-                     
-                  </form>
-                </div>
-            
-                <div class="modal-footer-Reg">
-                  <button id="Registrierung">Registrieren</button>
-                  <button id="closeAllModal">Zurück</button>
-            
-                </div>
-            </li>
+        <!--Modal Fenster(Anmeldung)-->
+        <div id="modal-Anm" class="modal-Anm">
+          <div class="modal-header-Anm"><h2>Anmeldung</h2></div>
+          <div class="modal-content-anm">
+              <form> </form>
           </div>
-        </div>
+          <div class="modal-footer-anm">
+              <button class="close-modal-btn" >Zurück</button>
+              <button class="anm-modal-btn">Anmelden</button>
+                    
+          </div>
+      </div>
+              <!--Modal Fenster Registration-->
+              <div id="modal-Reg" class="modal-Reg">
+                <div class="modal-header-Reg"><h2>Registrierung</h2></div>
+                <div class="modal-content-Reg">
+                    <form action="index.php"> 
+                      <div class="formular">
+                      <label for="vorname">Vorname</label>
+                      <input type="text" name="vorname" id="vorname">
+                      <label for="nachname">Nachname</label>
+                      <input type="text" name="nachname" id="nachname">
+                      </div>
+                      <div class="formular1">
+                      <label for="email">E-mail</label>
+                      <input type="text" name="email" id="email">
+                      <label for="telefonnummer">Telefonnummer</label>
+                      <input type="text" name="telefonnummer" id="telefonnummer">
+                      </div>
+                    </form>
+                
+                <div class="modal-footer-Reg">
+                  <button class="close-modal-btn">Zurück</button>
+                  <button class="reg-modal-btn">Registration</button>
+                </div>
+            </div>
       </nav>
+      <!--Foto Slide-->
       <div class="bodystart">
         <div class="slide-bg" style="background-image: url('img/hintergrundstart.webp');"></div>
         <div class="slide-bg" style="background-image: url('img/hintergrundstart1.webp');"></div>
@@ -114,7 +93,6 @@
         <h1>Zum Donauwirt</h1>
         <p>Ronald Pilz | Genuss am Fluss</p>
       </div>
-     
     </div>
     
       <script src="script.js"></script>

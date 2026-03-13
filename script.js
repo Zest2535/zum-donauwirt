@@ -1,27 +1,38 @@
+
 const modalAnm = document.getElementById('modal-Anm');
 const modalReg = document.getElementById('modal-Reg');
 
-if (modalAnm) modalAnm.style.display = 'none';
-if (modalReg) modalReg.style.display = 'none';
+const btnAnm = document.getElementById('openModalAnm');
+const btnReg = document.getElementById('openModalReg');
 
-function openModalAnm() {
+
+function openAnm() {
     modalAnm.style.display = 'block';
+    modalReg.style.display = 'none';
 }
 
-function openModalReg() {
+function openReg() {
     modalReg.style.display = 'block';
+    modalAnm.style.display = 'none'; 
 }
 
-
-function closeAllModals() {
-    document.getElementById('modal-Anm').style.display = 'none';
-    document.getElementById('modal-Reg').style.display = 'none';
+function closeAll() {
+    modalAnm.style.display = 'none';
+    modalReg.style.display = 'none';
 }
 
+btnAnm.addEventListener('click', openAnm);
+btnReg.addEventListener('click', openReg);
 
-// Добавляем обработчик события на кнопку открытия модального окна
+document.querySelectorAll('.close-modal-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Предотвращаем перезагрузку страницы, если это кнопка в форме
+        closeAll();
+    });
+});
 
-document.getElementById('openModalAnm').addEventListener('click', openModalAnm);
-document.getElementById('openModalReg').addEventListener('click', openModalReg);
-// Добавляем обработчик события на кнопку закрытия модального окна
-document.getElementById('closeModal').addEventListener('click', closeModal);
+window.addEventListener('click', (event) => {
+    if (event.target === modalAnm || event.target === modalReg) {
+        closeAll();
+    }
+});

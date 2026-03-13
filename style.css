@@ -50,19 +50,18 @@
 }
 .modal-Anm, .modal-Reg {
 
-  position: fixed;
-
-  top: 50%;
-
-  left: 50%;
-
-  width: 40%;
-
-  height: 60%;
-
-  background-color: rgba(255, 255, 255);
-
-  transform: translate(-50%, -50%);
+  display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px; 
+    max-width: 90%;
+    background-color: white;
+    z-index: 2000; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 8px;
   
 }
 
@@ -94,8 +93,68 @@
 
 }
 
-#closeModal, #openModalAnm, #openModalReg {
+#closeModal, #openModalAnm, #openModalReg, .close-modal-btn  {
 
   cursor: pointer;
 
+}
+.close-modal-btn, .anm-modal-btn, .reg-modal-btn{
+  background-color: #00718d;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding: 5px 50px;
+  color: white;
+  border: 1px;
+}
+.anm-modal-btn, .reg-modal-btn{
+  position: absolute;
+  right: 15px;
+}
+.close-modal-btn:hover, .anm-modal-btn:hover, .reg-modal-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.formular{
+  
+  display: flex;
+  align-items: left;
+  margin-bottom: 5px;
+}
+.formular label{
+  width: 90px; /* Фиксированная ширина для всех подписей */
+  text-align: left;
+  margin-left: 10px;
+}
+.formular input{
+  flex: 1;  
+  border: 1px solid   ; 
+  border-collapse: collapse;
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 5px;
+}
+.formular1{
+  flex-direction: column;
+  display: flex;
+  align-items: left;
+  margin-bottom: 15px;
+}
+.formular1 label{
+  width: 150px; /* Фиксированная ширина для всех подписей */
+  text-align: left;
+}
+.formular1 input{
+  flex: 1;  
+  border: 1px solid   ;
+  border-collapse: collapse;
+  max-width: 400px;
+  max-height: 150px;
+  border-radius: 5px;
+}
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.modal-header-Anm, .modal-header-Reg{
+  color: #00718d;
+  text-shadow: 1px 1px 2px rgba(2, 80, 122, 0.5);
 }
